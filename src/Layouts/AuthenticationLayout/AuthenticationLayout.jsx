@@ -12,7 +12,7 @@ const navigate=useNavigate()
     try {
 
       const response = await fetch(
-`${import.meta.env.VITE_API_URL}/user/validate/${token}`
+`https://candidate-website-be.onrender.com/user/validate/${token}`
       );
 
       const data =

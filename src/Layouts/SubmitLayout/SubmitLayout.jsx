@@ -247,7 +247,7 @@ async (e) => {
     const response =
       await axios.post(
 
-`http://localhost:5000/api/user/submit-documents/${token}`,
+`${import.meta.env.VITE_API_URL}/api/user/submit-documents/${token}`,
 
         submitData,
 

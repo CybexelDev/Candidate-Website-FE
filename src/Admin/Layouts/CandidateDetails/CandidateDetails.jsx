@@ -52,7 +52,7 @@ const [activeTab, setActiveTab] =
     return file;
   }
 
-  return `http://localhost:5000${file}`;
+  return `${import.meta.env.VITE_API_URL}${file}`;
 };
   const getStatusBadge = (s) => {
     const base = "px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider border ";
@@ -429,7 +429,7 @@ candidate?.createdAt
                   {doc.file && (
                     <div className="absolute inset-0 bg-[#0B1240]/90 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all flex items-center justify-center gap-4">
 <a
-  href={`http://localhost:5000${doc.file}`}
+  href={`${import.meta.env.VITE_API_URL}${doc.file}`}
   target="_blank"
   rel="noopener noreferrer"
 

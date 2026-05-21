@@ -12,7 +12,7 @@ const navigate=useNavigate()
     try {
 
       const response = await fetch(
-`https://candidate-website-be.onrender.com/user/validate/${token}`
+`https://candidate-website-be.onrender.com/api/user/validate/${token}`
       );
 
       const data =

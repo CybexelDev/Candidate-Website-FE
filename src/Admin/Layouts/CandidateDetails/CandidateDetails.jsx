@@ -431,7 +431,7 @@ candidate?.createdAt
                   {doc.file && (
                     <div className="absolute inset-0 bg-[#0B1240]/90 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all flex items-center justify-center gap-4">
 <a
-href={getFileUrl(doc.file)}  target="_blank"
+href={doc.file}  target="_blank"
   rel="noopener noreferrer"
 
   className="p-3 bg-white/5 hover:bg-white/10 rounded-full text-white transition-all shadow-xl"
@@ -450,7 +450,7 @@ href={getFileUrl(doc.file)}  target="_blank"
 
       const response =
         await fetch(
-          getFileUrl(doc.file)
+          doc.file
         );
 
       const blob =

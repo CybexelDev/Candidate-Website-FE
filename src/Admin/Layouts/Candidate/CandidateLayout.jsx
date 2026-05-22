@@ -459,9 +459,7 @@ async () => {
                         <Eye size={14} />
                         View
                       </button>
-                      <button className="p-2 hover:bg-white/5 rounded-xl text-white/20 hover:text-white transition-all">
-                        <MoreHorizontal size={18} />
-                      </button>
+                    
                     </div>
                   </td>
                 </tr>

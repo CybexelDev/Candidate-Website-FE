@@ -43,8 +43,7 @@ const { id } =
 useParams();
 const [activeTab, setActiveTab] =
   useState("Candidates");
-
-  const getFileUrl = (file) => {
+const getFileUrl = (file) => {
 
   if (!file) return "";
 
@@ -52,11 +51,7 @@ const [activeTab, setActiveTab] =
     return file;
   }
 
-  const baseUrl =
-    import.meta.env.VITE_API_URL
-      .replace("/api", "");
-
-  return `${baseUrl}${
+  return `https://candidate-website-be.onrender.com/${
     file.startsWith("/") ? "" : "/"
   }${file}`;
 };

@@ -190,8 +190,12 @@ if (sort === "Name A-Z") {
                 );
             }
 
-            const expiresAt =
-                `${expiryDate}T${expiryTime}:00`;
+           const localDate = new Date(
+  `${expiryDate}T${expiryTime}`
+);
+
+const expiresAt =
+  localDate.toISOString();
 
             const response =
                 await createUploadLinkApi({

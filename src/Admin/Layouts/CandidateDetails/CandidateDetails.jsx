@@ -51,10 +51,11 @@ const getFileUrl = (file) => {
     return file;
   }
 
-  return `https://candidate-website-be.onrender.com/${
+  return `https://candidate-website-be.onrender.com${
     file.startsWith("/") ? "" : "/"
   }${file}`;
 };
+
   const getStatusBadge = (s) => {
     const base = "px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider border ";
     if (s === 'Approved') return base + "bg-green-500/10 text-green-400 border-green-500/20";

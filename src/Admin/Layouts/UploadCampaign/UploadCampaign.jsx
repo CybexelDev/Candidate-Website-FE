@@ -53,6 +53,17 @@ const UploadCampaignsLayout = () => {
 
     : "Active";
 };
+useEffect(() => {
+
+  const interval = setInterval(() => {
+
+    setCampaigns((prev) => [...prev]);
+
+  }, 60000);
+
+  return () => clearInterval(interval);
+
+}, []);
     const [stats, setStats] =
         useState({});
 
@@ -561,8 +572,13 @@ if (sort === "Name A-Z") {
                                                 }</span>
                                             </td>
                                             <td className="px-6 py-5">
-                                                <span className={`text-[10px] font-bold px-3 py-1 rounded-full border ${getStatusStyle(camp.status)} uppercase tracking-wider`}>
-                                                    {
+<span
+  className={`text-[10px] font-bold px-3 py-1 rounded-full border ${getStatusStyle(
+    new Date(camp.expiresAt) < new Date()
+      ? "Expired"
+      : "Active"
+  )} uppercase tracking-wider`}
+>                                                    {
                                                         new Date(camp.expiresAt) <
                                                             new Date()
 

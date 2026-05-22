@@ -52,7 +52,13 @@ const [activeTab, setActiveTab] =
     return file;
   }
 
-  return `${import.meta.env.VITE_API_URL}${file}`;
+  const baseUrl =
+    import.meta.env.VITE_API_URL
+      .replace("/api", "");
+
+  return `${baseUrl}${
+    file.startsWith("/") ? "" : "/"
+  }${file}`;
 };
   const getStatusBadge = (s) => {
     const base = "px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider border ";
@@ -429,8 +435,7 @@ candidate?.createdAt
                   {doc.file && (
                     <div className="absolute inset-0 bg-[#0B1240]/90 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all flex items-center justify-center gap-4">
 <a
-  href={`${import.meta.env.VITE_API_URL}${doc.file}`}
-  target="_blank"
+href={getFileUrl(doc.file)}  target="_blank"
   rel="noopener noreferrer"
 
   className="p-3 bg-white/5 hover:bg-white/10 rounded-full text-white transition-all shadow-xl"

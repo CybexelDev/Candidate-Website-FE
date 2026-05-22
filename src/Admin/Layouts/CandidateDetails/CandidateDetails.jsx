@@ -280,75 +280,87 @@ Math.round(
           </div>
         </div>
 
-        <div className="flex items-center gap-3">
-          
-<button
+       <div className="flex items-center gap-3">
 
-onClick={async () => {
+  {status !== "Rejected" && (
 
-  try {
+    <button
 
-    await updateCandidateStatusApi(
+      onClick={async () => {
 
-      candidate._id,
+        try {
 
-      {
-        status: "Rejected"
-      }
+          await updateCandidateStatusApi(
 
-    );
+            candidate._id,
 
-    toast.success(
-      "Candidate rejected"
-    );
+            {
+              status: "Rejected"
+            }
 
-    fetchCandidate();
+          );
 
-  } catch (error) {
+          toast.success(
+            "Candidate rejected"
+          );
 
-    toast.error(
-      "Update failed"
-    );
-  }
-}}
+          fetchCandidate();
 
-className="px-5 py-2.5 bg-red-500/10 hover:bg-red-500 text-red-400 hover:text-white rounded-xl text-sm font-semibold transition-all border border-red-500/20"
->            Reject
-          </button>
-<button
+        } catch (error) {
 
-onClick={async () => {
+          toast.error(
+            "Update failed"
+          );
+        }
+      }}
 
-  try {
+      className="px-5 py-2.5 bg-red-500/10 hover:bg-red-500 text-red-400 hover:text-white rounded-xl text-sm font-semibold transition-all border border-red-500/20"
+    >
+      Reject
+    </button>
 
-    await updateCandidateStatusApi(
+  )}
 
-      candidate._id,
+  {status !== "Approved" && (
 
-      {
-        status: "Approved"
-      }
+    <button
 
-    );
+      onClick={async () => {
 
-    toast.success(
-      "Candidate approved"
-    );
+        try {
 
-    fetchCandidate();
+          await updateCandidateStatusApi(
 
-  } catch (error) {
+            candidate._id,
 
-    toast.error(
-      "Update failed"
-    );
-  }
-}}
+            {
+              status: "Approved"
+            }
 
-className="px-6 py-2.5 bg-blue-600 hover:bg-blue-500 text-white rounded-xl text-sm font-bold transition-all shadow-lg shadow-blue-900/40"
->            Approve Candidate
-          </button>
-        </div>
+          );
+
+          toast.success(
+            "Candidate approved"
+          );
+
+          fetchCandidate();
+
+        } catch (error) {
+
+          toast.error(
+            "Update failed"
+          );
+        }
+      }}
+
+      className="px-6 py-2.5 bg-blue-600 hover:bg-blue-500 text-white rounded-xl text-sm font-bold transition-all shadow-lg shadow-blue-900/40"
+    >
+      Approve Candidate
+    </button>
+
+  )}
+
+</div>
       </div>
 
       <div className="grid grid-cols-1 xl:grid-cols-3 gap-8">

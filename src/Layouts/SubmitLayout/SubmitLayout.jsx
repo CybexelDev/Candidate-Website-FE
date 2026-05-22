@@ -247,8 +247,7 @@ async (e) => {
     const response =
       await axios.post(
 
-`${import.meta.env.VITE_API_URL}/api/user/submit-documents/${token}`,
-
+`https://candidate-website-be.onrender.com/api/user/submit-documents/${token}`,
         submitData,
 
         {

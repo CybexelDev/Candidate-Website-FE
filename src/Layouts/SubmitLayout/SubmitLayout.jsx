@@ -108,6 +108,7 @@ const uploadedRequiredDocs =
  const handleFileChange = (id, file) => {
 
   if (!file) return;
+  alert(file.type);
 
   // FILE SIZE VALIDATION
   if (file.size > 5 * 1024 * 1024) {

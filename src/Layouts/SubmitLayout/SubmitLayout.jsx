@@ -271,16 +271,21 @@ async (e) => {
 
   } catch (error) {
 
-    console.log(error);
+  console.log(error);
 
-    toast.error(
+  console.log(
+    error.response?.data
+  );
 
-      error.response?.data?.message ||
+  toast.error(
 
-      "Submission failed"
-    );
+    error.response?.data?.message ||
 
-  } finally {
+    error.message ||
+
+    "Submission failed"
+  );
+} finally {
 
     setIsUploading(false);
   }

@@ -74,7 +74,7 @@ const handleInputChange = (e) => {
     { id: 'hsc', label: 'Higher Secondary Certificate', required: true },
     { id: 'degree', label: 'Degree / Diploma Certificate', required: false},
     { id: 'aadhaar', label: 'Aadhaar Card', required: true },
-    { id: 'photo', label: 'Passport Size Photo', required: true, icon: <Camera size={18} /> },
+    { id: 'photo', label: 'Passport Size Photo', required: false, icon: <Camera size={18} /> },
     { id: 'resume', label: 'Resume / CV', required: true },
     { id: 'pan', label: 'PAN Card', required: false },
   ];

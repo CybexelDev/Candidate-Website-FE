@@ -477,16 +477,23 @@ async () => {
             <button className="p-2 text-white/20 hover:text-white hover:bg-white/5 rounded-xl transition-all disabled:opacity-20" disabled>
               <ChevronLeft size={20} />
             </button>
-            <div className="flex gap-1">
-              {[1, 2, 3, '...', 12].map((num, i) => (
-                <button 
-                  key={i} 
-                  className={`w-9 h-9 rounded-xl text-xs font-bold transition-all border ${num === 1 ? 'bg-blue-600 border-blue-500 text-white' : 'hover:bg-white/5 border-transparent text-white/40 hover:text-white'}`}
-                >
-                  {num}
-                </button>
-              ))}
-            </div>
+          <div className="flex gap-1">
+  {Array.from(
+    { length: Math.ceil(filteredCandidates.length / 5) },
+    (_, i) => i + 1
+  ).map((num) => (
+    <button
+      key={num}
+      className={`w-9 h-9 rounded-xl text-xs font-bold transition-all border ${
+        num === 1
+          ? "bg-blue-600 border-blue-500 text-white"
+          : "hover:bg-white/5 border-transparent text-white/40 hover:text-white"
+      }`}
+    >
+      {num}
+    </button>
+  ))}
+</div>
             <button className="p-2 text-white/20 hover:text-white hover:bg-white/5 rounded-xl transition-all">
               <ChevronRight size={20} />
             </button>

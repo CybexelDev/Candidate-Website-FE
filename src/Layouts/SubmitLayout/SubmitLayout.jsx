@@ -72,7 +72,7 @@ const handleInputChange = (e) => {
   const docTypes = [
     { id: 'sslc', label: 'SSLC Certificate', required: true },
     { id: 'hsc', label: 'Higher Secondary Certificate', required: true },
-    { id: 'degree', label: 'Degree / Diploma Certificate', required: true },
+    { id: 'degree', label: 'Degree / Diploma Certificate', required: false},
     { id: 'aadhaar', label: 'Aadhaar Card', required: true },
     { id: 'photo', label: 'Passport Size Photo', required: true, icon: <Camera size={18} /> },
     { id: 'resume', label: 'Resume / CV', required: true },
